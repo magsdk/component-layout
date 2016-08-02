@@ -1,0 +1,10 @@
+.component.layout {
+    display: table;
+    width: 100%;
+    > div {
+        display: table-cell;
+        text-align: left;
+        vertical-align: middle;
+        height:100%;
+    }
+}
