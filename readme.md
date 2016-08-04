@@ -6,7 +6,7 @@ Layout component
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/spasdk)
 
 
-Layout list is a component to build user interface, an instance of [Component](https://github.com/spasdk/component) module.
+Layout is a component to build user interface, an instance of [Component](https://github.com/spasdk/component) module.
 
 
 ## Installation ##
