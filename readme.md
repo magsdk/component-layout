@@ -21,7 +21,7 @@ npm install mag-component-layout
 Add the singleton to the scope:
 
 ```js
-var list = require('mag-component-layout');
+var layout = require('mag-component-layout');
 ```
 
 
