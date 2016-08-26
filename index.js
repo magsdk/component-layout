@@ -65,7 +65,7 @@ function Layout ( config ) {
 
     // add listener to move focus between children
     this.addListener('keydown', function ( event ) {
-        switch ( event.code ) {
+        switch ( event.keyCode ) {
             case rc.codes.right:
                 if ( this.children.length && this.focusIndex < this.children.length - 1 ) {
                     this.children[++this.focusIndex].focus();
