@@ -8,7 +8,7 @@
 'use strict';
 
 var Component = require('stb-component'),
-    rc        = require('stb-rc');
+    keys      = require('stb-keys');
 
 /**
  * Layout component implementation
@@ -35,7 +35,6 @@ var Component = require('stb-component'),
  *         });
  */
 function Layout ( config ) {
-
     // sanitize
     config = config || {};
 
@@ -65,18 +64,18 @@ function Layout ( config ) {
 
     // add listener to move focus between children
     this.addListener('keydown', function ( event ) {
-        switch ( event.keyCode ) {
-            case rc.codes.right:
+        switch ( event.code ) {
+            case keys.right:
                 if ( this.children.length && this.focusIndex < this.children.length - 1 ) {
                     this.children[++this.focusIndex].focus();
                 }
                 break;
-            case rc.codes.left:
+            case keys.left:
                 if ( this.children.length && this.focusIndex > 0 ) {
                     this.children[--this.focusIndex].focus();
                 }
                 break;
-            case rc.codes.back:
+            case keys.back:
                 // focus parent
                 this.parent.focus();
 
@@ -87,7 +86,6 @@ function Layout ( config ) {
                 break;
         }
     });
-
 }
 
 
