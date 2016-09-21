@@ -1,16 +1,16 @@
-.mag-component-footer {
+.mag-component-layout {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     display: table;
     width: 100%;
     outline: 1px dashed #005000;
     outline-offset: -1px; }
-    .mag-component-footer.hidden {
+    .mag-component-layout.hidden {
         display: none; }
-    .mag-component-footer > div {
+    .mag-component-layout > div {
         display: table-cell;
         text-align: left;
         vertical-align: middle;
         height: 100%; }
-    .mag-component-footer.focus {
+    .mag-component-layout.focus {
         outline: 1px dashed red; }

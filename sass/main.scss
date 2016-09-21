@@ -4,7 +4,7 @@
 @import "body";
 @import "../node_modules/stb-component/sass/main";
 
-.mag-component-footer {
+.mag-component-layout {
     @include stb-component-release;
     @include mag-component-layout;
 
