@@ -50,7 +50,7 @@ function Layout ( config ) {
         if ( config.className && typeof config.className !== 'string' ) { throw new Error(__filename + ': wrong or empty config.className'); }
     }
 
-    config.className = 'layout ' + (config.className || '');
+    //config.className = 'layout ' + (config.className || '');
 
     /**
      * Component data
@@ -91,6 +91,9 @@ function Layout ( config ) {
 
 Layout.prototype = Object.create(Component.prototype);
 Layout.prototype.constructor = Layout;
+
+// set component name
+Layout.prototype.name = 'mag-component-layout';
 
 
 /**

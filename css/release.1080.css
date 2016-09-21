@@ -1,8 +1,11 @@
-/* mag-component-layout: release */
-.component.layout {
+.mag-component-footer {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     display: table;
     width: 100%; }
-    .component.layout > div {
+    .mag-component-footer.hidden {
+        display: none; }
+    .mag-component-footer > div {
         display: table-cell;
         text-align: left;
         vertical-align: middle;

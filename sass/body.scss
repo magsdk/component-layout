@@ -1,0 +1,13 @@
+// @license The MIT License (MIT)
+// @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
+
+@mixin mag-component-layout {
+  display: table;
+  width: 100%;
+  > div {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    height:100%;
+  }
+}

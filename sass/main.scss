@@ -1,14 +1,14 @@
 // @license The MIT License (MIT)
 // @copyright Stanislav Kalashnik <darkpark.main@gmail.com>
 
-/* mag-component-layout: release */
-.component.layout {
-    display: table;
-    width: 100%;
-    > div {
-        display: table-cell;
-        text-align: left;
-        vertical-align: middle;
-        height:100%;
+@import "body";
+@import "../node_modules/stb-component/sass/main";
+
+.mag-component-footer {
+    @include stb-component-release;
+    @include mag-component-layout;
+
+    @if $DEVELOP {
+        @include stb-component-develop;
     }
 }
