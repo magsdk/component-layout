@@ -202,6 +202,10 @@ Layout.prototype.init = function ( config ) {
                 // without wrapper
                 this.add(item.value);
             }
+        } else {
+            $wrapper = document.createElement('div');
+            if ( item.className ) { $wrapper.className = item.className; }
+            this.$node.appendChild($wrapper);
         }
     }
 };
