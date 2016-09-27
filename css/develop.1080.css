@@ -7,7 +7,7 @@
     outline-offset: -1px; }
     .mag-component-layout.hidden {
         display: none; }
-    .mag-component-layout > div {
+    .mag-component-layout div {
         display: table-cell;
         text-align: left;
         vertical-align: middle;

@@ -4,7 +4,7 @@
 @mixin mag-component-layout {
     display: table;
     width: 100%;
-    > div {
+    div {
         display: table-cell;
         text-align: left;
         vertical-align: middle;
