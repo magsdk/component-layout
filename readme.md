@@ -1,9 +1,10 @@
 Layout component
 ================
 
-[![Build Status](https://img.shields.io/travis/magsdk/component-layout.svg?style=flat-square)](https://travis-ci.org/magsdk/component-layout)
-[![NPM version](https://img.shields.io/npm/v/mag-component-layout.svg?style=flat-square)](https://www.npmjs.com/package/mag-component-layout)
-[![Dependencies Status](https://img.shields.io/david/magsdk/component-layout.svg?style=flat-square)](https://david-dm.org/magsdk/component-layout)
+[![build status](https://img.shields.io/travis/magsdk/component-layout.svg?style=flat-square)](https://travis-ci.org/magsdk/component-layout)
+[![npm version](https://img.shields.io/npm/v/mag-component-layout.svg?style=flat-square)](https://www.npmjs.com/package/mag-component-layout)
+[![dependencies status](https://img.shields.io/david/magsdk/component-layout.svg?style=flat-square)](https://david-dm.org/magsdk/component-layout)
+[![devDependencies status](https://img.shields.io/david/dev/magsdk/component-layout.svg?style=flat-square)](https://david-dm.org/magsdk/component-layout?type=dev)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-blue.svg?style=flat-square)](https://gitter.im/DarkPark/magsdk)
 
 
