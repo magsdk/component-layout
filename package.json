@@ -17,7 +17,7 @@
         "jsdoc": "jsdoc --destination doc *.js readme.md"
     },
     "dependencies": {
-        "stb-component": "stbsdk/component",
+        "stb-component": "1.*.*",
         "stb-keys": "stbsdk/keys"
     },
     "devDependencies": {
