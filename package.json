@@ -18,7 +18,7 @@
     },
     "dependencies": {
         "stb-component": "1.*.*",
-        "stb-keys": "stbsdk/keys"
+        "stb-keys": "1.*.*"
     },
     "devDependencies": {
         "eslint": "3.*.*",
