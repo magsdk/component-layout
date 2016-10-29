@@ -20,10 +20,27 @@ npm install mag-component-layout
 
 ## Usage ##
 
-Add the singleton to the scope:
+Add the constructor to the scope:
 
 ```js
-var layout = require('mag-component-layout');
+var Layout = require('mag-component-layout');
+```
+
+Create layout instance:
+
+```js
+var layout = new Layout({
+    data: [
+        'Some text',
+         {
+            className: 'icon star'
+         },
+         {
+            value: new Button({value:'Ok'})
+         },
+         new Button({value:'Cancel'})
+    ]
+});
 ```
 
 

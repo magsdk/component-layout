@@ -18,21 +18,6 @@ var Component = require('stb-component'),
  *
  * @param {Object}   [config={}]          init parameters (all inherited from the parent)
  * @param {Array} [config.data] array of items to add to layout
- *
- * @example
- * var Layout = require ('../stb/ui/layout'),
- *     layout = new Layout({
- *         data:[
- *             'Some text'
- *             {
- *                 className: 'icon star',
- *             },
- *             {
- *                 value: new Input()
- *             },
- *             new Button({'value:'Ok'})
- *             ]
- *         });
  */
 function Layout ( config ) {
     // sanitize
