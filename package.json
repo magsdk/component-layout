@@ -1,6 +1,6 @@
 {
     "name": "mag-component-layout",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Base layout implementation.",
     "author": {
         "name": "Stanislav Kalashnik",
