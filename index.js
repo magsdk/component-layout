@@ -30,9 +30,13 @@ function Layout ( config ) {
     this.focusIndex = 0;
 
     if ( DEVELOP ) {
-        if ( typeof config !== 'object' ) { throw new Error(__filename + ': wrong config type'); }
+        if ( typeof config !== 'object' ) {
+            throw new Error(__filename + ': wrong config type');
+        }
         // init parameters checks
-        if ( config.className && typeof config.className !== 'string' ) { throw new Error(__filename + ': wrong or empty config.className'); }
+        if ( 'className' in config && (!config.className || typeof config.className !== 'string') ) {
+            throw new Error(__filename + ': wrong or empty config.className');
+        }
     }
 
     //config.className = 'layout ' + (config.className || '');
@@ -92,8 +96,12 @@ function normalize ( data ) {
     var index, item;
 
     if ( DEVELOP ) {
-        if ( arguments.length !== 1 ) { throw new Error(__filename + ': wrong arguments number'); }
-        if ( !Array.isArray(data) ) { throw new Error(__filename + ': wrong data type'); }
+        if ( arguments.length !== 1 ) {
+            throw new Error(__filename + ': wrong arguments number');
+        }
+        if ( !Array.isArray(data) ) {
+            throw new Error(__filename + ': wrong data type');
+        }
     }
 
     // rows
