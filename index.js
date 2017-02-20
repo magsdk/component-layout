@@ -34,7 +34,7 @@ function Layout ( config ) {
             throw new Error(__filename + ': wrong config type');
         }
         // init parameters checks
-        if ( 'className' in config && (!config.className || typeof config.className !== 'string') ) {
+        if ( 'className' in config && config.className != undefined && typeof config.className !== 'string' ) {
             throw new Error(__filename + ': wrong or empty config.className');
         }
     }
