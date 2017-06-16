@@ -20,6 +20,8 @@ var Component = require('stb-component'),
  * @param {Array} [config.data] array of items to add to layout
  */
 function Layout ( config ) {
+    var self = this;
+
     // sanitize
     config = config || {};
 
@@ -34,7 +36,7 @@ function Layout ( config ) {
             throw new Error(__filename + ': wrong config type');
         }
         // init parameters checks
-        if ( 'className' in config && config.className != undefined && typeof config.className !== 'string' ) {
+        if ( 'className' in config && config.className !== undefined && typeof config.className !== 'string' ) {
             throw new Error(__filename + ': wrong or empty config.className');
         }
     }
@@ -55,22 +57,22 @@ function Layout ( config ) {
     this.addListener('keydown', function ( event ) {
         switch ( event.code ) {
             case keys.right:
-                if ( this.children.length && this.focusIndex < this.children.length - 1 ) {
-                    this.children[++this.focusIndex].focus();
+                if ( self.children.length && self.focusIndex < self.children.length - 1 ) {
+                    self.children[++self.focusIndex].focus();
                 }
                 break;
             case keys.left:
-                if ( this.children.length && this.focusIndex > 0 ) {
-                    this.children[--this.focusIndex].focus();
+                if ( self.children.length && self.focusIndex > 0 ) {
+                    self.children[--self.focusIndex].focus();
                 }
                 break;
             case keys.back:
                 // focus parent
-                this.parent.focus();
+                self.parent.focus();
 
                 // focus parent focused item if parent is layout list
-                if ( this.parent &&  this.$parentItem ) {
-                    this.parent.focusItem(this.$parentItem);
+                if ( self.parent &&  self.$parentItem ) {
+                    self.parent.focusItem(self.$parentItem);
                 }
                 break;
         }
@@ -109,24 +111,25 @@ function normalize ( data ) {
         // cell value
         item = data[index];
         // plain text
-        if ( typeof item !== 'object' ) {
-            // wrap with defaults
-            data[index] = {
-                value: data[index],
-                wrap : true
-            };
-        } else {
+        if ( typeof item === 'object' ) {
             // HTML element or component
             if ( item instanceof Component || item instanceof HTMLElement ) {
                 data[index] = {
                     value: item,
-                    wrap : false
+                    wrap: false
                 };
             } else {
                 data[index].wrap = true;
             }
+        } else {
+            // wrap with defaults
+            data[index] = {
+                value: data[index],
+                wrap: true
+            };
         }
     }
+
     return data;
 }
 
@@ -147,6 +150,13 @@ Layout.prototype.init = function ( config ) {
     }
 
     this.data = data;
+
+    /**
+     * @this Component
+     */
+    function componentClickHandler (  ) {
+        self.focusIndex = this.index;
+    }
 
     for ( index = 0; index < data.length; index++ ) {
         item = data[index];
@@ -178,9 +188,7 @@ Layout.prototype.init = function ( config ) {
             item.value.index = this.children.length;
 
             // change layout focus index if click component
-            item.value.addListener('click', function () {
-                self.focusIndex = this.index;
-            });
+            item.value.addListener('click', componentClickHandler);
 
             // append component
             if ( item.wrap ) {
