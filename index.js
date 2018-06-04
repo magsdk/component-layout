@@ -67,12 +67,12 @@ function Layout ( config ) {
                 }
                 break;
             case keys.back:
-                // focus parent
-                self.parent.focus();
-
                 // focus parent focused item if parent is layout list
-                if ( self.parent &&  self.$parentItem ) {
-                    self.parent.focusItem(self.$parentItem);
+                if ( self.parent ) {
+                    self.parent.focus();
+                    if ( self.$parentItem ) {
+                        self.parent.focusItem(self.$parentItem);
+                    }
                 }
                 break;
         }
