@@ -154,7 +154,7 @@ Layout.prototype.init = function ( config ) {
     /**
      * @this Component
      */
-    function componentClickHandler (  ) {
+    function componentClickHandler () {
         self.focusIndex = this.index;
     }
 
@@ -166,6 +166,9 @@ Layout.prototype.init = function ( config ) {
             $wrapper.textContent = item.value;
             if ( item.className ) { $wrapper.className = item.className; }
             this.$node.appendChild($wrapper);
+            if ( item.name ) {
+                this[item.name] = $wrapper;
+            }
         } else if ( item.value instanceof HTMLElement ) {
             // HTML Element
 
@@ -175,9 +178,15 @@ Layout.prototype.init = function ( config ) {
                 if ( item.className ) { $wrapper.className = item.className; }
                 $wrapper.appendChild(item.value);
                 this.$node.appendChild($wrapper);
+                if ( item.name ) {
+                    this[item.name] = $wrapper;
+                }
             } else {
                 // without wrapper
                 this.$node.appendChild(item.value);
+                if ( item.name ) {
+                    this[item.name] = item.value;
+                }
             }
         } else if ( item.value instanceof Component ) {
             // component
@@ -199,14 +208,23 @@ Layout.prototype.init = function ( config ) {
                 this.$node.appendChild($wrapper);
                 this.children.push(item.value);
                 item.value.parent = this;
+                if ( item.name ) {
+                    this[item.name] = $wrapper;
+                }
             } else {
                 // without wrapper
                 this.add(item.value);
+                if ( item.name ) {
+                    this[item.name] = item.value;
+                }
             }
         } else {
             $wrapper = document.createElement('div');
             if ( item.className ) { $wrapper.className = item.className; }
             this.$node.appendChild($wrapper);
+            if ( item.name ) {
+                this[item.name] = $wrapper;
+            }
         }
     }
 };
