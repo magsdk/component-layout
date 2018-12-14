@@ -49,6 +49,11 @@ function Layout ( config ) {
      */
     this.data = [];
 
+    /**
+     *  Hash map of item links
+     */
+    this.links = {};
+
     Component.call(this, config);
 
     this.init(config);
@@ -167,7 +172,7 @@ Layout.prototype.init = function ( config ) {
             if ( item.className ) { $wrapper.className = item.className; }
             this.$node.appendChild($wrapper);
             if ( item.name ) {
-                this[item.name] = $wrapper;
+                this.links[item.name] = $wrapper;
             }
         } else if ( item.value instanceof HTMLElement ) {
             // HTML Element
@@ -179,13 +184,13 @@ Layout.prototype.init = function ( config ) {
                 $wrapper.appendChild(item.value);
                 this.$node.appendChild($wrapper);
                 if ( item.name ) {
-                    this[item.name] = $wrapper;
+                    this.links[item.name] = $wrapper;
                 }
             } else {
                 // without wrapper
                 this.$node.appendChild(item.value);
                 if ( item.name ) {
-                    this[item.name] = item.value;
+                    this.links[item.name] = item.value;
                 }
             }
         } else if ( item.value instanceof Component ) {
@@ -209,13 +214,13 @@ Layout.prototype.init = function ( config ) {
                 this.children.push(item.value);
                 item.value.parent = this;
                 if ( item.name ) {
-                    this[item.name] = $wrapper;
+                    this.links[item.name] = $wrapper;
                 }
             } else {
                 // without wrapper
                 this.add(item.value);
                 if ( item.name ) {
-                    this[item.name] = item.value;
+                    this.links[item.name] = item.value;
                 }
             }
         } else {
@@ -223,7 +228,7 @@ Layout.prototype.init = function ( config ) {
             if ( item.className ) { $wrapper.className = item.className; }
             this.$node.appendChild($wrapper);
             if ( item.name ) {
-                this[item.name] = $wrapper;
+                this.links[item.name] = $wrapper;
             }
         }
     }
