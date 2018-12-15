@@ -33,10 +33,12 @@ var layout = new Layout({
     data: [
         'Some text',
          {
-            className: 'icon star'
+            className: 'icon star',
+            name: '$starIcon'
          },
          {
-            value: new Button({value:'Ok'})
+            value: new Button({value:'Ok'}),
+            name: 'okButton'
          },
          new Button({value:'Cancel'})
     ]
